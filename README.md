@@ -1,7 +1,7 @@
 # libarrow
 
 ```Dockerfile
-FROM mbrobbel/libarrow-dockerfile:latest
+FROM mbrobbel/libarrow:latest
 
 RUN ...
 ```
