@@ -1,4 +1,4 @@
-# libarrow-dockerfile
+# libarrow
 
 ```Dockerfile
 FROM mbrobbel/libarrow-dockerfile:latest
