@@ -1,11 +1,11 @@
-FROM alpine:3.8
+FROM debian:stretch-slim
 
 ENV ARROW_VERSION 0.11.0
+ENV BUILD_PACKAGES git make cmake g++ libboost-all-dev
+ENV RUNTIME_PACKAGES libboost-all-dev
 
-ENV BUILD_PACKAGES git make cmake g++
-ENV RUNTIME_PACKAGES boost-dev
-
-RUN apk add --no-cache $BUILD_PACKAGES $RUNTIME_PACKAGES && \
+RUN apt-get update && \
+    apt-get install -y $BUILD_PACKAGES && \
     git clone \
       --single-branch \
       --depth 1 \
@@ -18,4 +18,7 @@ RUN apk add --no-cache $BUILD_PACKAGES $RUNTIME_PACKAGES && \
       cpp/ && \
     make && make install && \
     cd .. && rm -rf arrow && \
-    apk del $BUILD_PACKAGES
+    apt-get remove -y --purge $BUILD_PACKAGES && \
+    apt-get install -y $RUNTIME_PACKAGES && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/*
