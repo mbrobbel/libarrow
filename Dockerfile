@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM debian:buster-slim
 
 ENV ARROW_VERSION 0.11.1
 ENV BUILD_PACKAGES git make cmake g++ libboost-all-dev
