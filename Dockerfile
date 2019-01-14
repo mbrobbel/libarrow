@@ -1,6 +1,6 @@
 FROM debian:buster-slim
 
-ENV ARROW_VERSION 0.11.1
+ENV ARROW_VERSION 0.12.0
 ENV BUILD_PACKAGES git make cmake g++ libboost-all-dev
 ENV RUNTIME_PACKAGES libboost-all-dev
 
