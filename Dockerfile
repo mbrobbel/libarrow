@@ -1,6 +1,6 @@
 FROM debian:buster-slim
 
-ENV ARROW_VERSION 0.17.0
+ENV ARROW_VERSION 0.17.1
 ENV BUILD_PACKAGES git make cmake g++
 ENV RUNTIME_PACKAGES curl git make g++
 
